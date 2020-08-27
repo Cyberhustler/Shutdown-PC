@@ -22,4 +22,18 @@ def download():
         link.set("Ënter the Correct link")
  
 #create the welcome label to welcome the user
-Label(root)
+Label(root, text="Welcome to Yashens Youtube\n Downloader Application", font="Consolas 15 bold").pack()
+#declaring StringVar type variables
+myVar = StringVar()
+#Setting the default text to myVar
+myVar.set("Enter the link below")
+# created the Entry widget to ask the user to enter the URL
+Entry(root, textvariable=myVar, width=40).pack(pady=10)
+#declaring StringVar type variable
+link = StringVar()
+#created the entry widget to gain the link needed
+Entry(root, textvariable=link,width=40).pack(pady=10)
+#created and called the download functon to download the video
+Button(root, text="Download video", command=download).pack()
+#running the the mainloop
+root.mainloop()
